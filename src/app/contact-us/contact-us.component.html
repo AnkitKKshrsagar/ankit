@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="text-align: center;">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+
+  <div class="row">
+    <div class="col-lg-12" style="text-align: center;">
+        <p>“Our team works closely with clients to deliver guaranteed returns on their investment ensuring 100% client satisfaction.”</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8" style="text-align: center;">
+        <h2>Feel Free to Contact and Reach Us!</h2>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4" style="text-align: center;">
+        <p>We are a young, Dynamic, Innovative and<br>
+            Creative Team of enthusiastic<br>
+            Professional</p>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+
+    <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <form action="/action_page.php" style="margin-top: 50px;">
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" [(ngModel)]="name" class="form-control" id="usr" placeholder="Name" name="username">
+              </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+              <label for="comment">Message:</label>
+              <textarea class="form-control" [(ngModel)]="message" rows="4" id="comment" name="text"></textarea>
+          </div>
+          <button type="submit" class="btn btn-info" (click)="submit()">Submit Information</button>
+          &nbsp;<button type="Update" class="btn btn-warning" (click)="update()">Update Information</button>
+        </form>
+        <br>
+        <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Edit</th>
+              <th>Delete</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of loginData, let i = index">
+            <tr>
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.message}}</td>
+              <td>          
+                <button type="edit" class="btn btn-warning" (click)="edit(i, item)">Edit</button>
+              </td>
+              <td>
+                <button type="delete" class="btn btn-danger" (click)="delete(i)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-lg-2">
+      <button type="button" (click)="Alert()">Alert</button>
+    </div>
+   
+  </div>
+  <br>
+</div>
+
+
+
+

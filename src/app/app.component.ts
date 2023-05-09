@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertmessageService } from './alertmessage.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ankit';
+constructor(ts:AlertmessageService){
+ts.callMessageAPI()
+}
 }
